@@ -26,7 +26,6 @@ git format-patch origin/master --stdout > seu_nome.patch
 ```
 ## Requisitos
 
-* Não publique sua solução. Apenas nos envie o que desenvolveu.
 * Crie imagens Docker para ambas as aplicações. 
 * Preencher este arquivo README.md com os detalhes, linha de raciocínio e dicas para os desenvolvedores que utilizarão sua solução.
 * Considere que os desenvolvedores estão iniciando carreira e precisarão de mais detalhes de como executar sua solução.
