@@ -1,4 +1,4 @@
-# Exame - Bexs DevOps
+# Challenge DevOps
 
 ## Desafio
 
