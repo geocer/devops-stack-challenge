@@ -44,33 +44,43 @@ Entre em contato e nos questione.
 
 ## Solução
 1. Foram criadas imagens para ambas aplicações seguindo algums práticas:
-  a. Imagens oficiais Docker Hub
-  Backend https://hub.docker.com/_/golang / https://hub.docker.com/_/alpine
-  Frontend: https://hub.docker.com/_/python 
 
-  b. multi-stage build: Para a aplicação backend foi usado um Dockerfile multi-stage que permite uma imagem final da aplicação somente com o necessário para ser executada, além de ser fácil de ler e manter. (https://docs.docker.com/develop/develop-images/multistage-build/)
-  
-  c. TAG: Usadas últimas versões de tags disponíveis do repositório, evitando usar tag 'latest' por questões de estabilidade das versões de aplicações geradas nos ciclos de desenvolvimento.
+   a. Imagens oficiais Docker Hub
+    Backend https://hub.docker.com/_/golang / https://hub.docker.com/_/alpine
+    Frontend: https://hub.docker.com/_/python 
+
+   b. multi-stage build: Para a aplicação backend foi usado um Dockerfile multi-stage que permite uma imagem final da aplicação somente com o necessário para ser executada, além de ser fácil de ler e manter. (https://docs.docker.com/develop/develop-images/multistage-build/)     
+   
+   c. Tags: Foram usadas nas imagens base versões estáveis de tag do repositório Docker Hub, evitando a tag 'latest' por questões de estabilidade das versões da stack geradas nesse ciclo de desenvolvimento  
 
 
-2. Docker-compose 
-   a. Foi \
+2. Docker-compose
+   a. Maior agilidade em tempo de desenvolvimento, permitindo flexibilidade para que o desenvolvedor construa/reconstrua a stack em seu desenvolvimento.   
 
-3. 
+   b. As configurações do docker-compose disponíveis podem ser convertidas posteriormente para plataformas como kubernetes, Openshift, AWS ECS, por exemplo;   
 
-### Pre requisitos
+   c. Figuradamente, o Docker-compose disponibilizado poderia ser um template padronizado de stack, convertido de uma stack que roda nas plataformas produtivas.    
+
+3. Desenho da solução:
+
+![Stack](stack.png)
+
+## Pre requisitos
 * Docker 17.05 ou maior (https://docs.docker.com/install/)
 * Docker-Compose (https://docs.docker.com/compose/install/)
 
-### Build e boostrap da stack
-Executar os command lines:
-* docker-compose build
-Essa linha de comando irá disponibilizar as imagens para o container
-* docker-compose up
-Essa linha de comando irá disponibilizar a criação dos containers.
+## Build e boostrap da stack
+*Executar os command lines:
+   Essa linha de comando irá disponibilizar as imagens para o container   
+`docker-compose build`
 
-### Release Note Backend
- * Adicionado um arquivo de módulo para dependências da solução backend
+   Essa linha de comando irá disponibilizar a criação dos containers   
+`docker-compose up`
+⋅
 
-### Release Note Frontend
+## Release Note Backend
+ * Adicionado um arquivo de módulo para download das dependências da solução backend
+
+## Release Note Frontend
  * Adicionado arquivo .env para carregamento de variaveis de ambiente solução frontend
+
