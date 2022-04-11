@@ -63,7 +63,7 @@ Entre em contato e nos questione.
 
 3. Desenho da solução:
 
-![Stack](stack.png)
+![Stack](./images/stack.png)
 
 ## Pre requisitos
 * Docker 17.05 ou maior (https://docs.docker.com/install/)
