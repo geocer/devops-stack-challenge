@@ -1,0 +1,17 @@
+version: "3"
+services:
+  frontend:
+    build:
+      context: ./frontend/src/frontend
+    container_name: frontend
+    ports:
+     - "8000:8000"
+    tty: true
+    depends_on:
+      - backend
+  backend:
+    build:
+      context: ./backend/src/backend
+    container_name: backend
+    ports:
+      - "8080:8080"
